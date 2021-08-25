@@ -10,11 +10,11 @@ class CarsController < ApplicationController
   end
 
   def new
-
+    @car = Car.new
   end
 
   def create
-
+    @car = Car.create(car_params)
   end
 
   def edit
@@ -33,5 +33,10 @@ class CarsController < ApplicationController
 
   def find_car
     @car = Car.find(params[:id])
+  end
+
+  def car_params
+    params.require(:car).permit(:model, :color, :mileage, :year)
+
   end
 end

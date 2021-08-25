@@ -1,4 +1,6 @@
 class CarsController < ApplicationController
+  before_action :find_car, only: [ :show]
+
   def index
     @cars = Car.all
   end
@@ -28,4 +30,8 @@ class CarsController < ApplicationController
   end
 
   private
+
+  def find_car
+    @car = Car.find(params[:id])
+  end
 end

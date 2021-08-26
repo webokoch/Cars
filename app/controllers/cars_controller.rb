@@ -1,5 +1,5 @@
 class CarsController < ApplicationController
-  before_action :find_car, only: [ :show]
+  before_action :find_car, only: [ :show, :edit, :update, :destroy]
 
   def index
     @cars = Car.all
@@ -15,6 +15,11 @@ class CarsController < ApplicationController
 
   def create
     @car = Car.create(car_params)
+    if @car.save
+      redirect_to car_path(@car), notice: 'New car was successfully added!'
+    else
+      render :new
+    end
   end
 
   def edit
@@ -22,7 +27,11 @@ class CarsController < ApplicationController
   end
 
   def update
-
+    if @car.update(car_params)
+      redirect_to car_path(@car), notice: 'Car was successfully updated!'
+    else
+      render :edit
+    end
   end
 
   def destroy

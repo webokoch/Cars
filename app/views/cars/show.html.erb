@@ -9,3 +9,13 @@
 
 <p id="notice"><%= notice %></p>
 
+<%= link_to edit_car_path do %>
+  <h3>Update <%= @car.model %> </h3>
+<% end %>
+
+<%= link_to car_path(@car), method: :delete, data: {
+  confirm: "Do you really want to delete this car?" } do %>
+  <h3>Delete <%= @car.model %></h3>
+<% end %>
+
+<h3><%= link_to 'Back to all cars', cars_path, class: 'btn-lg btn-success'  %></h3>

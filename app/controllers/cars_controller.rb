@@ -35,7 +35,8 @@ class CarsController < ApplicationController
   end
 
   def destroy
-
+    @car.destroy
+    redirect_to cars_path, notice: 'Car was successfully destroyed!'
   end
 
   private

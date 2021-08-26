@@ -1,5 +1,10 @@
 <h1>All available Cars</h1>
-
+<br>
+<p id="notice"><%= notice %></p>
+<br>
+<h2> <%= link_to 'Add a new car', new_car_path, class: 'btn-lg btn-info' %> </h2>
+<br>
+<br>
 <% @cars.each do |car| %>
-  <h3> <%= car.model %> </h3>
+  <h3>  <%= link_to car.model , car_path(car)  %> </h3>
 <% end %>

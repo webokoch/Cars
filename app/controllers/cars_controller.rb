@@ -6,7 +6,6 @@ class CarsController < ApplicationController
   end
 
   def show
-
   end
 
   def new
@@ -23,7 +22,6 @@ class CarsController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
@@ -47,6 +45,5 @@ class CarsController < ApplicationController
 
   def car_params
     params.require(:car).permit(:model, :color, :mileage, :year)
-
   end
 end

@@ -1,23 +1,20 @@
-<h3> <%= @car.model %> </h3>
-
-<h5>Color <%= @car.color %> </h5>
-
-<h5>Mileage <%= @car.mileage %> km</h5>
-
-<h5>Built in <%= @car.year %> </h5>
-
-<p id="notice"><%= notice %></p>
-
-<%= link_to(edit_car_path, class: "btn-lg btn-success text-decoration-none") do %>
-  <spam>Update <%= @car.model %></spam>
-<% end %>
-
-<%= link_to car_path(@car), method: :delete, data: {
-  confirm: "Do you really want to delete this car?" } do %>
-  <spam class="btn-lg btn-success text-decoration-none">Delete <%= @car.model %></spam>
-<% end %>
-
-<h3><%= link_to 'Back to all cars', cars_path, class: 'btn-lg btn-success text-decoration-none'  %></h3>
-
-
-
+<div class="card m-5" style="width: 18rem;">
+  <div class="card-body">
+    <h3 class="card-title"> <%= @car.model %> </h3>
+    <p class="card-text">
+      <h5>Color <%= @car.color %> </h5>
+      <h5>Mileage <%= @car.mileage %> km</h5>
+      <h5>Built in <%= @car.year %> </h5>
+    </p>
+    <div>
+    <%= link_to(edit_car_path, class: "btn btn-success text-decoration-none") do %>
+      <spam>Update <%= @car.model %></spam>
+    <% end %>
+    <%= link_to car_path(@car), method: :delete, data: {
+      confirm: "Do you really want to delete this car?" } do %>
+      <spam class="btn btn-success text-decoration-none mt-2">Delete <%= @car.model %></spam>
+    <% end %>
+    </div>
+  </div>
+</div>
+<h3 class="m-5"><%= link_to 'Back to all cars', cars_path, class: 'btn-lg btn-success text-decoration-none'  %></h3>

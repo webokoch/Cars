@@ -1,11 +1,9 @@
 <h1 class="m-3">All available Cars</h1>
-<br>
-<p id="notice"><%= notice %></p>
-<br>
+
+<p class="m-5" id="notice"><%= notice %></p>
+
 <h2> <%= link_to 'Add a new car', new_car_path, class: 'btn-lg btn-info
   text-decoration-none m-3' %> </h2>
-<br>
-<br>
 <div class="row">
   <% @cars.each do |car| %>
     <div class="col-12 col-md-6 col-lg-4">

@@ -1,8 +1,9 @@
-<%= simple_form_for car do |f| %>
-  <%= f.input :model %>
-  <%= f.input :color %>
-  <%= f.input :mileage %>
-  <%= f.input :year %>
-  <%= f.button :submit, class: 'btn-large btn-success'%>
-<% end %>
-
+<div class="mt-3">
+  <%= simple_form_for car do |f| %>
+    <%= f.input :model %>
+    <%= f.input :color %>
+    <%= f.input :mileage %>
+    <%= f.input :year %>
+    <%= f.button :submit, class: 'btn-large btn-success mt-3'%>
+  <% end %>
+</div>
